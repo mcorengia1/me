@@ -1,113 +1,299 @@
+'use client'
 import Image from 'next/image'
+import { useRef } from 'react'
+import ProyectCard from './ProyectCard'
+import TookeatImg from '../../public/tookeat-project.jpg'
+import CryptoDashImg from '../../public/cryptodash-project.jpg'
+import Fab from '@mui/material/Fab';
+import MenuIcon from '@mui/icons-material/Menu';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import MailIcon from '@mui/icons-material/Mail';
 
 export default function Home() {
+
+  const navigationRef: any = useRef(null)
+  const proyectsRef: any = useRef(null)
+  const techRef: any = useRef(null)
+  const contactRef: any = useRef(null)
+
+  const scrollTo = (ref: any) => {
+    ref.current.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main>
+      <div className="bg-[url('../../public/main-bg.jpg')] bg-center bg-cover flex min-h-screen flex-col items-center justify-center p-24">
+        <h1 className='text-9xl'>Hola</h1>
+        <button
+          className='border border-white rounded-3xl px-4 py-1 text-xl mt-32'
+          onClick={() => scrollTo(navigationRef)}
+        >Ver más</button>
+
+      </div>
+
+      <div ref={navigationRef}
+        className="bg-[url('../../public/earth.jpg')] bg-center bg-contain bg-no-repeat flex h-screen flex-col items-center justify-center">
+        <p className='mx-3 my-16 max-w-4xl p-3 bg-black/70 rounded-xl text-xl text-center'>Soy Mauro Corengia y tengo experiencia creando soluciones informaticas completas con aplicaciones Full Stack (React - Go/Node).
+          Así también como administrando su infraestructura</p>
+
+        <div className='flex flex-wrap w-full h-full justify-center'>
+          <div className='bg-[url("../../public/proyects.png")] bg-center bg-cover flex justify-center items-center flex-col w-2/5 h-44 hover:bg-black/90 rounded-xl cursor-pointer max-w-sm mx-2'
+            onClick={() => scrollTo(proyectsRef)}>
+
+            <h3 className='text-xl font-bold'>Proyectos</h3>
+          </div>
+
+          <div className='bg-[url("../../public/tech.png")] bg-center bg-cover flex justify-center items-center flex-col w-2/5 h-44 hover:bg-black/80 bg-black/70 rounded-xl cursor-pointer max-w-sm mx-2'
+            onClick={() => scrollTo(techRef)}>
+
+            <h3 className='text-xl font-bold'>Tecnologías</h3>
+          </div>
+        </div>
+
+        <div className='flex flex-wrap w-full h-full justify-center'>
+          <div className='bg-[url("../../public/contact.png")] bg-center bg-cover flex justify-center items-center flex-col w-2/5 h-44 hover:bg-black/80 bg-black/70 rounded-xl cursor-pointer max-w-sm mx-2'
+            onClick={() => scrollTo(contactRef)}>
+
+            <h3 className='text-xl font-bold'>Contacto</h3>
+          </div>
+
+          <div className='bg-[url("../../public/cv.png")] bg-center bg-cover flex justify-center items-center flex-col w-2/5 h-44 hover:bg-black/80 bg-black/70 rounded-xl cursor-pointer max-w-sm mx-2'
+            onClick={() => window.open('https://drive.google.com/file/d/1WlWZcfWUjhdDB8Zx_BVkP-d1XxmN7vPo/view?usp=drive_link')}>
+
+            <h3 className='text-xl font-bold'>CV de Mauro</h3>
+            <p>Se mostrará en Google Drive</p>
+          </div>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div ref={proyectsRef} className="bg-[url('../../public/venus.jpg')] bg-center bg-cover min-h-screen flex flex-col items-center justify-center">
+        <h2 className='my-6 text-5xl'>Proyectos</h2>
+
+        <div className='flex flex-row flex-wrap items-center justify-center'>
+
+          <ProyectCard
+            title='Tookeat'
+            description='Web App para crear un menú online y recibir pedidos por Whatsapp'
+            live='https://www.tookeat.com'
+            image={TookeatImg}
+            stack={[{
+              title: 'Features',
+              content: 'Suscripciones, manejo de usuarios, menus e imagenes dinamicas, reglas de seguridad cloud',
+            },
+            {
+              title: 'APIs de terceros',
+              content: 'Cloud functions para interactuar con la API de MercadoPago sin necesidad de un servidor ',
+            },
+            {
+              title: 'Base de datos de imagenes de archivos',
+              content: 'Google Cloud Storage',
+            },
+            {
+              title: 'Base de datos de usuarios',
+              content: 'RealTime Database de Google Cloud',
+            },
+            {
+              title: 'Frontend',
+              content: 'React',
+            },
+            {
+              title: 'Manejo de usuarios',
+              content: 'Google auth, registro con email y con cuenta de google',
+            },
+            {
+              title: 'Sistema de pagos',
+              content: 'Posee un sistema de versiones de pago usando el API de MercadoPago y un cronjob para verificar los estados de las suscripciones',
+            },]}
+          />
+
+          <ProyectCard
+            title='CryptoDash'
+            description='Dashboard crypto con cotizaciones en tiempo real e información de cada criptomoneda'
+            github='https://github.com/mcorengia1/cryptodash'
+            demo='https://cryptodash123.vercel.app/'
+            image={CryptoDashImg}
+          />
+
+        </div>
+
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <div ref={techRef} className="bg-[url('../../public/neptune.jpg')] flex justify-center items-center flex-col bg-center bg-cover min-h-screen py-24">
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+        <h2 className='my-6 text-5xl'>Skills</h2>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+        <div className='flex flex-row justify-evenly flex-wrap w-full'>
+          <div className='flex flex-col justify-center items-start w-full md:w-1/3 my-4 px-2 bg-black/75 min-w-min '>
+            <h3 className='text-3xl my-4 mx-2'>FullStack</h3>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='React'
+                src='/react.svg'
+                width={40}
+                height={40}
+              />
+              &nbsp;React</div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='Next.js'
+                src='/nextjs.png'
+                width={40}
+                height={40}
+              />
+              &nbsp;Next.js
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='Typescript'
+                src='/typescript.png'
+                width={40}
+                height={40}
+              />
+              &nbsp;Typescript
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='HTML'
+                src='/html.svg'
+                width={40}
+                height={40}
+              />
+              &nbsp;HTML
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='CSS'
+                src='/css.svg'
+                width={40}
+                height={40}
+              />
+              &nbsp;CSS
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='Git'
+                src='/git.svg'
+                width={40}
+                height={40}
+              />
+              &nbsp;Git
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='Go'
+                src='/go.svg'
+                width={40}
+                height={40}
+              />
+              &nbsp;Go
+            </div>
+          </div>
+
+          <div className='flex flex-col justify-center items-start w-full md:w-1/3 my-4 px-2 bg-black/75 min-w-min '>
+            <h3 className='text-3xl my-4 mx-2'>DevOps</h3>
+
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='Python'
+                src='/python.svg'
+                width={40}
+                height={40}
+              />
+              &nbsp;Python
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='Bash'
+                src='/bash.svg'
+                width={40}
+                height={40}
+              />
+              &nbsp;Bash
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='Linux'
+                src='/linux.png'
+                width={40}
+                height={40}
+              />
+              &nbsp;Linux
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='Containers'
+                src='/docker.svg'
+                width={40}
+                height={40}
+              />
+              &nbsp;Containers
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='Networking'
+                src='/networking.png'
+                width={40}
+                height={40}
+              />
+              &nbsp;Networking
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='Cloud'
+                src='/cloudops.svg'
+                width={40}
+                height={40}
+              />
+              &nbsp;Cloud
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='CI/CD'
+                src='/cicd.png'
+                width={40}
+                height={40}
+              />
+              &nbsp;CI/CD
+            </div>
+            <div className='flex flex-row items-center text-xl my-2 ms-6'>
+              <Image
+                alt='Monitoreo'
+                src='/monitoreo.png'
+                width={40}
+                height={40}
+              />
+              &nbsp;Monitoreo
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
+      <div ref={contactRef} className="bg-[url('../../public/contact-bg.jpg')] bg-center bg-cover min-h-screen flex flex-col items-center justify-center w-full">
+        <h2 className='my-6 text-5xl'>Contacto</h2>
+
+        <div className='bg-black/50 p-1 w-full md:w-2/5 rounded-xl'>
+          <div className='bg-black/50 p-2 my-4 border rounded-xl cursor-pointer hover:bg-black/75'
+            onClick={() => window.open('https://github.com/mcorengia1')}>
+            <GitHubIcon />
+            &nbsp;/mcorengia1
+          </div>
+          <div className='bg-black/50 p-2 my-4 border rounded-xl cursor-pointer hover:bg-black/75'
+            onClick={() => window.open('https://www.linkedin.com/in/maurocorengia/')}>
+            <LinkedInIcon />
+            &nbsp;@maurocorengia
+          </div>
+          <div className='bg-black/50 p-2 my-4 border rounded-xl'>
+            <MailIcon />
+            &nbsp;mcorengia1@gmail.com
+          </div>
+        </div>
+
+      </div>
+
+      <Fab className='fixed bottom-3.5 right-3.5 bg-white hover:bg-white/90' onClick={() => scrollTo(navigationRef)}>
+        <MenuIcon />
+      </Fab>
+    </main >
   )
 }
