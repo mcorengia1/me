@@ -59,9 +59,9 @@ export default function ProyectCard(props: Data) {
 
                 {!showDetails ? null :
                     <>
-                        {!props.stack ? null : props.stack.map((elem: Stack) => {
+                        {!props.stack ? null : props.stack.map((elem: Stack, i: number) => {
                             return (
-                                <div className='my-2 bg-black/75'>
+                                <div className='my-2 bg-black/75' key={i}>
                                     <h3 className='text-xl font-semibold'>{elem.title}</h3>
                                     <p className=''>{elem.content}</p>
                                 </div>
