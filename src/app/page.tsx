@@ -74,8 +74,8 @@ export default function Home() {
         <h2 className='my-6 text-5xl'>Proyectos</h2>
 
         <p className='mx-3 max-w-4xl p-3 bg-black/70 rounded-xl text-xl text-center'>
-          Estos son algunos de los proyectos que considero los mas interesantes de ver desde un lado "no tecnico".
-          Todos mis repositorios de codigo los pueden encontrar en <Link href={'https://github.com/mcorengia1'} className='underline'>Mi Github</Link>
+          Estos son algunos de los proyectos que considero los mas interesantes de ver desde un lado &quot;no tecnico&quot;.
+          Todos mis repositorios de codigo (+25) los pueden encontrar en <Link href={'https://github.com/mcorengia1'} className='underline'>Mi Github</Link>
         </p>
 
         <div className='flex flex-row flex-wrap items-center justify-center'>
