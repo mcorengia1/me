@@ -27,14 +27,14 @@ export default function ProyectCard(props: Data) {
     const detailsClass = "bg-black/60 rounded-xl m-3 w-full md:w-1/2"
 
     return (
-        <div className={showDetails ? detailsClass : noDetailsClass} >
+        <div className={showDetails ? detailsClass : noDetailsClass}>
 
             <div className="bg-center bg-cover h-48 flex items-end"
                 style={{ backgroundImage: props.image ? 'url(' + props.image.src + ')' : '' }}>
                 <h3 className="text-2xl bg-black/75 p-2 w-full">{props.title}</h3>
             </div>
 
-            <div className="m-3">
+            <div className="flex flex-col justify-between m-3" style={{ minHeight: '125px' }} >
                 <p>{props.description}</p>
 
                 <div className="flex items-center justify-evenly">

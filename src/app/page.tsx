@@ -9,6 +9,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import MailIcon from '@mui/icons-material/Mail';
+import Link from 'next/link'
 
 export default function Home() {
 
@@ -34,8 +35,10 @@ export default function Home() {
 
       <div ref={navigationRef}
         className="bg-[url('../../public/earth.jpg')] bg-center bg-contain bg-no-repeat flex h-screen flex-col items-center justify-center">
-        <p className='mx-3 my-16 max-w-4xl p-3 bg-black/70 rounded-xl text-xl text-center'>Soy Mauro Corengia y tengo experiencia creando soluciones informaticas completas con aplicaciones Full Stack (React - Go/Node).
-          Así también como administrando su infraestructura</p>
+        <p className='mx-3 my-16 max-w-4xl p-3 bg-black/70 rounded-xl text-xl text-center'>
+          Soy Mauro Corengia y tengo experiencia creando soluciones informaticas completas con aplicaciones Full Stack (React - Go/Node).
+          Así también como administrando su infraestructura
+        </p>
 
         <div className='flex flex-wrap w-full h-full justify-center'>
           <div className='bg-[url("../../public/proyects.png")] bg-center bg-cover flex justify-center items-center flex-col w-2/5 h-44 hover:bg-black/90 rounded-xl cursor-pointer max-w-sm mx-2'
@@ -69,6 +72,11 @@ export default function Home() {
 
       <div ref={proyectsRef} className="bg-[url('../../public/venus.jpg')] bg-center bg-cover min-h-screen flex flex-col items-center justify-center">
         <h2 className='my-6 text-5xl'>Proyectos</h2>
+
+        <p className='mx-3 max-w-4xl p-3 bg-black/70 rounded-xl text-xl text-center'>
+          Estos son algunos de los proyectos que considero los mas interesantes de ver desde un lado "no tecnico".
+          Todos mis repositorios de codigo los pueden encontrar en <Link href={'https://github.com/mcorengia1'} className='underline'>Mi Github</Link>
+        </p>
 
         <div className='flex flex-row flex-wrap items-center justify-center'>
 
