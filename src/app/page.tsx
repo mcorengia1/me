@@ -36,8 +36,7 @@ export default function Home() {
       <div ref={navigationRef}
         className="bg-[url('../../public/earth.jpg')] bg-center bg-contain bg-no-repeat flex h-screen flex-col items-center justify-center">
         <p className='mx-3 my-16 max-w-4xl p-3 bg-black/70 rounded-xl text-xl text-center'>
-          Soy Mauro Corengia y tengo experiencia creando soluciones informaticas completas con aplicaciones Full Stack (React - Go/Node).
-          Así también como administrando su infraestructura
+          Me llamo Mauro y tengo experiencia creando soluciones completas con aplicaciones Full Stack (React - Go/Node), así también como administrando su infraestructura
         </p>
 
         <div className='flex flex-wrap w-full h-full justify-center'>
@@ -74,7 +73,7 @@ export default function Home() {
         <h2 className='my-6 text-5xl'>Proyectos</h2>
 
         <p className='mx-3 max-w-4xl p-3 bg-black/70 rounded-xl text-xl text-center'>
-          Estos son algunos de los proyectos que considero los mas interesantes de ver desde un lado &quot;no tecnico&quot;.
+          Estos son algunos de los proyectos que considero mas interesantes de ver.
           Todos mis repositorios de codigo (+25) los pueden encontrar en <Link href={'https://github.com/mcorengia1'} className='underline'>Mi Github</Link>
         </p>
 
@@ -299,7 +298,8 @@ export default function Home() {
 
       </div>
 
-      <Fab className='fixed bottom-3.5 right-3.5 bg-white hover:bg-white/90' onClick={() => scrollTo(navigationRef)}>
+      <Fab className='bg-white hover:bg-white/90' onClick={() => scrollTo(navigationRef)}
+        style={{ position: 'fixed', bottom: '25px', right: '25px' }}>
         <MenuIcon />
       </Fab>
     </main >
